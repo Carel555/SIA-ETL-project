@@ -91,7 +91,7 @@ The primary aim is to:
 
 ## 🧩 Database Design
 
-As part of the **Load** step in our ETL process, we designed a normalized PostgreSQL database schema under the `sia_normalised` schema. This design helps to improve query efficiency, eliminate redundancy, and support future scalability of the system (e.g., adding other airlines' reviews later).
+As part of the **Load** step in our ETL process, we designed a normalized PostgreSQL database schema under the `sia_normalised` schema. This design helps to improve query efficiency, eliminate redundancy, and support future scalability of the system (e.g., adding other airlines' reviews later). It must be noted that our analysis is still exploratory and not massive in scale.
 
 ### 📘 Schema Overview
 
@@ -203,8 +203,19 @@ Surrogate keys are used across all main tables:
 
 - **Incomplete Features**: Some fields (e.g. routes or traveler types) may have missing values due to incomplete data extraction.
 
-## Improvements
+## 📈 Improvements
 
+1. **Introduce Star Schema for Analytics**  
+   While the current **Entity-Relationship Diagram (ERD)** and normalized database design are ideal for maintaining data integrity and scalability, future expansion into **business intelligence (BI)** tools or **dashboarding** may benefit from implementing a **star schema**.  
+   - This would involve creating a **fact table** (e.g., `fact_reviews`) to capture measurable events such as sentiment scores and ratings.  
+   - Related **dimension tables** (e.g., `dim_seat_type`, `dim_traveller_type`, `dim_airline`, `dim_date`) can provide context to support faster and more flexible queries.  
+   - A star schema structure simplifies analytical queries, improves performance in BI tools like Tableau or Power BI, and supports trend reporting and aggregations more efficiently.
+
+2. **Add Support for Multi-Airline Reviews**  
+   Extend the schema to include an `airline` table and associated foreign key in `sia_users` to support scraping and storing reviews for multiple airlines beyond Singapore Airlines.
+
+3. **Time Dimension for Trend Analysis**  
+   Introduce a `dim_date` table to enable time-based analytics such as seasonal trends in sentiment or ratings, e.g., fluctuations around holidays or during major travel disruptions.
 
 
 #### Resources:
