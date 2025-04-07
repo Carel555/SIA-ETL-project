@@ -149,30 +149,64 @@ Surrogate keys are used across all main tables:
 ## Exploratory Data Analysis
 
 ### Steps Involved
+#### 1. Data Extraction
+- **Objective**: Scrape Singapore Airlines reviews from Skytrax using Python libraries like Beautiful Soup.
+- **Process**:
+- Extract key fields such as User Name, Overall Rating, Review, Detail Review, Type of Traveller, Seat Type, Route, etc.
+- Handle pagination to scrape multiple pages of reviews.
+- Save the extracted data into a CSV file for further processing.
+
+#### 2. Data Transformation
+- **Objective**: Clean and preprocess the extracted data for analysis and sentiment scoring.
+- **Steps**:
+    - Identify and handle missing values (NaN), filling them with default values like 'Missing' or 0.
+    - Drop unnecessary columns to focus on relevant features.
+    - Standardize text in the Detail Review column for sentiment analysis.
+
+#### 3. Sentiment Analysis
+- **Objective**: Analyze customer sentiment using TextBlob's polarity scores.
+- **Steps**:
+    - Calculate sentiment polarity for each review (-1 for negative, 0 for neutral, and 1 for positive).
+    - Classify reviews into sentiment categoreis (positive, negative or neutral) based on polarity thresholds.
+
+#### 4. Visualization
+- **Objective**: Gain insights into sentiment distribution and word usage patterns.
+- **Steps**:
+    - Create histograms to visualize the distribution of sentiment scores.
+    - Generate word clouds for all reviews, positive sentiments and negative sentiments.
 
 ### Result and Findings
 
-- test123
+- **Sentiment Distribution**:
+  - The average sentiment score is slightly positive (mean = 0.193610), indicating overall satisfaction but with room for improvement.
+  - Negative reviews highlight common issues such as flight delays, poor service, or uncomfortable seating.
   
-- ....
+- **Word Cloud Insights**:
+  - Positive reviews frequently mention terms like "friendly", "comfortable", and "excellent".
+  - Negative reviews highlight terms such as "delay", "poor", and "uncomfortable".
   
-- ....
+- **Feature Correlation**:
+  - Higher ratings correlate strongly with positive sentiment polarity scores.
+  - Economy-class passengers tend to leave more negative reviews compared to business/first-class travellers.
 
 ### Recommendations
 
-- ....
+- Focus on addressing recurring complaints in negative reviews (e.g delays, staff behaviour).
 
-- ....
+- Leverage positive feedback by emphasizing strengths like friendly staff and inflight entertainment in marketing campaigns.
 
-- ....
+- Conduct further analysis to identify seasonal trends in customer satisfaction (e.g. holiday travel periods).
 
 ### Limitations
 
-- ....
+- **Data Bias**: Reviews may be biased toward extreme opinions (very positive or very negative), which could skew overall sentiment analysis results.
 
-- ....
+- **TextBlob Limitations**: TextBlob struggles with nuanced context like sarcasm or slang, potentially misclassifying some sentiments.
+
+- **Incomplete Features**: Some fields (e.g. routes or traveler types) may have missing values due to incomplete data extraction.
 
 ## Improvements
 
-....
 
+
+#### Resources:
