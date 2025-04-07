@@ -201,8 +201,6 @@ Surrogate keys are used across all main tables:
 
 - **Data Bias**: Reviews may be biased toward extreme opinions (very positive or very negative), which could skew overall sentiment analysis results.
 
-- **TextBlob Limitations**: TextBlob struggles with nuanced context like sarcasm or slang, potentially misclassifying some sentiments.
-
 - **Incomplete Features**: Some fields (e.g. routes or traveler types) may have missing values due to incomplete data extraction.
 
 ## Improvements
