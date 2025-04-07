@@ -216,6 +216,3 @@ Surrogate keys are used across all main tables:
 
 3. **Time Dimension for Trend Analysis**  
    Introduce a `dim_date` table to enable time-based analytics such as seasonal trends in sentiment or ratings, e.g., fluctuations around holidays or during major travel disruptions.
-
-
-#### Resources:
