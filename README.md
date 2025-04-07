@@ -197,12 +197,6 @@ Surrogate keys are used across all main tables:
 
 - Conduct further analysis to identify seasonal trends in customer satisfaction (e.g. holiday travel periods).
 
-### Limitations
-
-- **Data Bias**: Reviews may be biased toward extreme opinions (very positive or very negative), which could skew overall sentiment analysis results.
-
-- **Incomplete Features**: Some fields (e.g. routes or traveler types) may have missing values due to incomplete data extraction.
-
 ## 📈 Improvements
 
 1. **Introduce Star Schema for Analytics**  
