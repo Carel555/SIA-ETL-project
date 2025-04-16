@@ -18,7 +18,6 @@
 - [Steps Involved](#steps-involved)
 - [Result and Findings](#result-and-findings)
 - [Recommendations](#recommendations)
-- [Limitations](#limitations)
 - [Improvements](#improvements)
 
   
